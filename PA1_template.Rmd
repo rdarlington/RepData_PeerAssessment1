@@ -54,7 +54,7 @@ intervalAverageComplete <- aggregate(steps ~ interval, data=activity, rm.na=TRUE
         #rename variables        
 names(intervalAverageComplete) <- sub("steps", "intAverage", names(intervalAverageComplete))
         
-#Fill in NAs with interval average from previous step
+#Using average calculated for each intervale fill in NAs with average from previous step
         #Merge datasets to include inverval average in activity
         activity2 <- merge(activity, intervalAverageComplete, by="interval")
         #replace missing NAs
